@@ -80,6 +80,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                   enable: false,
                   mode: "repulse",
                 },
+                // eslint-disable-next-line
                 resize: true as any,
               },
               modes: {

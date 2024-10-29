@@ -1,5 +1,5 @@
 import axios from "axios";
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function handler(req: any, res: any) {
   if (req.method === "POST") {
     const { message } = req.body;
