@@ -180,7 +180,9 @@ export function PlaceholdersAndVanishInput() {
     vanishAndSubmit();
 
     try {
-      await sendMessage(value);
+      const repsonce = await sendMessage(value);
+
+      console.log('repsonce',repsonce)
     } catch (error) {
       console.error("Error:", error);
     }
