@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import axios from "axios";
+import {sendMessage} from "@/app/actions";
 
 const placeholders = [
   "Напиши свій телеграм або інстаграм",
@@ -172,16 +172,20 @@ export function PlaceholdersAndVanishInput() {
     }
   };
 
+
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     vanishAndSubmit();
-    console.log("value", value);
+
     try {
-      await axios.post("/api/contact", { message: value });
+      await sendMessage(value);
     } catch (error) {
       console.error("Error:", error);
     }
   };
+
   return (
     <form
       className={cn(
